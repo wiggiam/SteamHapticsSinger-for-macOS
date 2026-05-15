@@ -2,7 +2,7 @@
 #include <chrono>
 #include <cstring>
 
-#include <stdint-gcc.h>
+#include <stdint.h>
 #include <unistd.h>
 #include <stdint.h>
 
@@ -270,7 +270,7 @@ void playSong(SteamControllerInfos* controller,const ParamsStruct params){
 	MidiFile_t midifile;
 
 	//Open Midi File
-	midifile = MidiFile_load(params.midiSong);
+	midifile = MidiFile_load(const_cast<char*>(params.midiSong));
 
 	if(midifile == NULL){
 		cout << "Unable to open MIDI file!" << params.midiSong << endl;
