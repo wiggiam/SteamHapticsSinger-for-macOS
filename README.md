@@ -1,6 +1,10 @@
 # Steam Haptics Singer
 
-This project aims to be a continuation of SteamControllerSinger (forked from [Roboron3042's fork](https://github.com/Roboron3042/SteamControllerSinger), originally by [Pila](https://gitlab.com/Pilatomic/SteamControllerSinger)) by fixing issues, adding features, and, most notably, Steam Deck and Steam Controller (2026) support.
+This project is a further continuation of SteamHapticsSinger (forked from [CrazyCritic89's fork](https://github.com/CrazyCritic89/SteamHapticsSinger), originally by [Pila](https://gitlab.com/Pilatomic/SteamControllerSinger)) by adding macOS support (as a .app file)
+
+***WARNING:*** this is not going to be kept as up-to-date as CrazyCritic89's fork, since I have to recompile the project each time.
+
+Below is CrazyCritic89's README.md file:
 
 ## How To
 
