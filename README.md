@@ -123,6 +123,17 @@ cd SteamHapticsSinger-for-macOS
 g++ -o steam-haptics-singer main.cpp midifile/midifile.c -fpermissive -I/opt/homebrew/include -I/opt/homebrew/include/libusb-1.0 `pkg-config --libs --cflags libusb-1.0 hidapi`
 ```
 
+Finally, build the app bundle:
+
+```bash
+osacompile -o "Steam Haptics Singer Beta.app" launcher.applescript
+cp steam-haptics-singer "Steam Haptics Singer Beta.app/Contents/MacOS/"
+chmod +x "Steam Haptics Singer Beta.app/Contents/MacOS/steam-haptics-singer"
+cp "Steam Haptics Singer Beta.icns" "Steam Haptics Singer Beta.app/Contents/Resources/droplet.icns"
+```
+
+You can move `Steam Haptics Singer Beta.app` to your Applications folder, once you've finished, if you want :)
+
 ## Changelog
 
 [v1.11.2]
