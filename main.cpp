@@ -2,7 +2,7 @@
 #include <chrono>
 #include <cstring>
 
-#include <stdint-gcc.h>
+#include <stdint.h>
 #include <unistd.h>
 #include <stdint.h>
 
@@ -270,7 +270,7 @@ void playSong(SteamControllerInfos* controller,const ParamsStruct params){
 	MidiFile_t midifile;
 
 	//Open Midi File
-	midifile = MidiFile_load(params.midiSong);
+	midifile = MidiFile_load(const_cast<char*>(params.midiSong));
 
 	if(midifile == NULL){
 		cout << "Unable to open MIDI file!" << params.midiSong << endl;
@@ -293,7 +293,7 @@ void playSong(SteamControllerInfos* controller,const ParamsStruct params){
 	sleep(1);
 
 	//This will contains the previous events accepted for each channel
-	MidiFileEvent_t acceptedEventPerChannel[channelCount] = {0};
+	MidiFileEvent_t acceptedEventPerChannel[channelCount]; memset(acceptedEventPerChannel, 0, sizeof(acceptedEventPerChannel));
 
 	//Get current time point, will be used to know elapsed time
 	std::chrono::steady_clock::time_point tOrigin = std::chrono::steady_clock::now();
@@ -306,7 +306,7 @@ void playSong(SteamControllerInfos* controller,const ParamsStruct params){
 		usleep(params.intervalUSec);
 
 		//This will contains the events to play
-		MidiFileEvent_t eventsToPlay[channelCount] = {NULL};
+		MidiFileEvent_t eventsToPlay[channelCount]; memset(eventsToPlay, 0, sizeof(eventsToPlay));
 
 		//We now need to play all events with tick < currentTime
 		long currentTick = MidiFile_getTickFromTime(midifile,timeElapsedSince(tOrigin));
