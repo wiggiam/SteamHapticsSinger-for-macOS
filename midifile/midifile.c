@@ -815,7 +815,7 @@ static MidiFile_t load_midi_file(MidiFileIO_t io)
 							case 0xF7:
 							{
 								int data_length = read_variable_length_quantity(io) + 1;
-								unsigned char *data_buffer = malloc(data_length);
+								unsigned char *data_buffer = (unsigned char *)malloc(data_length);
 								data_buffer[0] = status;
 								MidiFileIO_read(io, data_length - 1, data_buffer + 1);
 								MidiFileTrack_createSysexEvent(track, tick, data_length, data_buffer);
@@ -826,7 +826,7 @@ static MidiFile_t load_midi_file(MidiFileIO_t io)
 							{
 								int number = MidiFileIO_getc(io);
 								int data_length = read_variable_length_quantity(io);
-								unsigned char *data_buffer = malloc(data_length);
+								unsigned char *data_buffer = (unsigned char *)malloc(data_length);
 								MidiFileIO_read(io, data_length, data_buffer);
 
 								if (number == 0x2F)
@@ -2969,7 +2969,7 @@ MidiFileEvent_t MidiFileTrack_createSysexEvent(MidiFileTrack_t track, long tick,
 	new_event->tick = tick;
 	new_event->type = MIDI_FILE_EVENT_TYPE_SYSEX;
 	new_event->u.sysex.data_length = data_length;
-	new_event->u.sysex.data_buffer = malloc(data_length);
+	new_event->u.sysex.data_buffer = (unsigned char *)malloc(data_length);
 	memcpy(new_event->u.sysex.data_buffer, data_buffer, data_length);
 	new_event->should_be_visited = 0;
 	new_event->is_selected = 0;
@@ -2990,7 +2990,7 @@ MidiFileEvent_t MidiFileTrack_createMetaEvent(MidiFileTrack_t track, long tick, 
 	new_event->type = MIDI_FILE_EVENT_TYPE_META;
 	new_event->u.meta.number = number;
 	new_event->u.meta.data_length = data_length;
-	new_event->u.meta.data_buffer = malloc(data_length + 1);
+	new_event->u.meta.data_buffer = (unsigned char *)malloc(data_length + 1);
 	memcpy(new_event->u.meta.data_buffer, data_buffer, data_length);
 	new_event->u.meta.data_buffer[data_length] = '\0';
 	new_event->should_be_visited = 0;
@@ -3831,7 +3831,7 @@ int MidiFileSysexEvent_setData(MidiFileEvent_t event, int data_length, unsigned 
 	if ((event == NULL) || (event->type != MIDI_FILE_EVENT_TYPE_SYSEX) || (data_length < 1) || (data_buffer == NULL)) return -1;
 	free(event->u.sysex.data_buffer);
 	event->u.sysex.data_length = data_length;
-	event->u.sysex.data_buffer = malloc(data_length);
+	event->u.sysex.data_buffer = (unsigned char *)malloc(data_length);
 	memcpy(event->u.sysex.data_buffer, data_buffer, data_length);
 	return 0;
 }
@@ -3866,7 +3866,7 @@ int MidiFileMetaEvent_setData(MidiFileEvent_t event, int data_length, unsigned c
 	if ((event == NULL) || (event->type != MIDI_FILE_EVENT_TYPE_META) || (data_buffer == NULL)) return -1;
 	free(event->u.meta.data_buffer);
 	event->u.meta.data_length = data_length;
-	event->u.meta.data_buffer = malloc(data_length + 1);
+	event->u.meta.data_buffer = (unsigned char *)malloc(data_length + 1);
 	memcpy(event->u.meta.data_buffer, data_buffer, data_length);
 	event->u.meta.data_buffer[data_length] = '\0';
 	return 0;

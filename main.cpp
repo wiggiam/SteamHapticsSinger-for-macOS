@@ -2,15 +2,14 @@
 #include <chrono>
 #include <cstring>
 
-#include <stdint-gcc.h>
-#include <unistd.h>
 #include <stdint.h>
+#include <unistd.h>
 
 #include <signal.h>
 #include <stdio.h>
 
-#include <hidapi.h>
-#include <libusb.h>
+#include <libusb-1.0/libusb.h>
+#include <hidapi/hidapi.h>
 #include "midifile/midifile.h"
 
 #define STEAM_CONTROLLER_MAGIC_PERIOD_RATIO 495483.0
@@ -290,7 +289,7 @@ void playSong(SteamControllerInfos* controller,const ParamsStruct params){
 	MidiFile_t midifile;
 
 	//Open Midi File
-	midifile = MidiFile_load(params.midiSong);
+	midifile = MidiFile_load(const_cast<char*>(params.midiSong));
 
 	if(midifile == NULL){
 		cout << "Unable to open MIDI file!" << params.midiSong << endl;
