@@ -129,7 +129,7 @@ chmod +x "Steam Haptics Singer.app/Contents/MacOS/steam-haptics-singer"
 cp "Steam Haptics Singer.icns" "Steam Haptics Singer.app/Contents/Resources/droplet.icns"
 ```
 
-You can move `Steam Haptics Singer.app` to your Applications folder, once you're finished, if you want :)
+You can move `Steam Haptics Singer.app` to your Applications folder, once you've finished, if you want :)
 
 ## Changelog
 
