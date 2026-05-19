@@ -75,7 +75,7 @@ Also, Crazy has made a small **[Discord server](https://discord.gg/TWpvAxX5GW)**
 
 ### Where can I find midi songs?
 
-Songs ready to play can be found in the original guy's [personal collection](https://mega.nz/#F!BWpEWKzB!r7WPw5bZ_domN4pk-FJsjg) (as he called it). Otherwise, you can just try a MIDI and see what happens (most of the time it won't work well).
+Songs ready to play can be found in the original guy's (Pila) [personal collection](https://mega.nz/#F!BWpEWKzB!r7WPw5bZ_domN4pk-FJsjg) (as he called it). Otherwise, you can just try a MIDI and see what happens (most of the time it won't work well).
 
 ### Usage from command prompt:
 ***FYI: this is for Windows, but I've kept it for identifying what each flag does.***
