@@ -1,52 +1,124 @@
-# Steam Haptics Singer
+# Steam Haptics Singer (for macOS)
+<img align="left" height="90" alt="shs_icon" src="https://github.com/user-attachments/assets/39023623-ca33-4917-bc82-20c50d0ba8a6" /><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 36 36"
+   fill="none"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="shs_icon_b.svg"
+   inkscape:export-filename="shs_icon.png"
+   inkscape:export-xdpi="2730.6667"
+   inkscape:export-ydpi="2730.6667"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <g
+     id="g10"
+     transform="matrix(0.9558466,0,0,0.9558466,0.7947612,0.47193656)"
+     style="fill:#ffffff">
+    <path
+       fill="currentColor"
+       d="M 6.68629,12.972521 C 3.79086,15.867951 2,19.867921 2,24.286221 c 0,4.4183 1.79086,8.4183 4.68629,11.3137 l 2.82843,-2.8284 C 7.34315,30.599921 6,27.599921 6,24.286221 c 0,-3.3137 1.34315,-6.3137 3.51472,-8.48527 z"
+       id="path1"
+       style="fill:#ffffff" />
+    <path
+       fill="currentColor"
+       d="m 26.4853,15.800951 2.8284,-2.82843 c 2.8954,2.89543 4.6863,6.8954 4.6863,11.3137 0,4.4183 -1.7909,8.4183 -4.6863,11.3137 l -2.8284,-2.8284 c 2.1716,-2.1716 3.5147,-5.1716 3.5147,-8.4853 0,-3.3137 -1.3431,-6.3137 -3.5147,-8.48527 z"
+       id="path2"
+       style="fill:#ffffff" />
+    <circle
+       fill="currentColor"
+       cx="18"
+       cy="23.972523"
+       r="2"
+       id="circle2"
+       style="fill:#ffffff" />
+    <path
+       fill="currentColor"
+       d="m 17.8891,15.021171 c -2.2288,0.05461 -4.4412,0.93239 -6.1422,2.63335 -1.81373,1.8138 -2.69151,4.2091 -2.63327,6.5858 h 4.00217 c -0.0597,-1.3525 0.4268,-2.7247 1.4596,-3.7574 0.9199,-0.9199 2.109,-1.4064 3.3137,-1.4596 z"
+       id="path3"
+       style="fill:#ffffff" />
+    <path
+       fill="currentColor"
+       d="m 23.106,24.240321 h 4.0022 c -0.0546,2.2288 -0.9324,4.4412 -2.6333,6.1421 -1.8138,1.8138 -4.2092,2.6916 -6.5858,2.6333 v -4.0022 c 1.3525,0.0597 2.7246,-0.4268 3.7573,-1.4595 0.9199,-0.9199 1.4064,-2.109 1.4596,-3.3137 z"
+       id="path4"
+       style="fill:#ffffff" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+       d="m 18,23.972521 c 0,0 12.841818,-8.831348 -4.049088,-21.2167022 7.389848,4.7708025 11.898585,2.1119279 11.898585,2.1119279"
+       id="path5"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>
 
-This project aims to be a continuation of SteamControllerSinger (forked from [Roboron3042's fork](https://github.com/Roboron3042/SteamControllerSinger), originally by [Pila](https://gitlab.com/Pilatomic/SteamControllerSinger)) by fixing issues, adding features, and, most notably, Steam Deck and Steam Controller (2026) support.
+This project is a further continuation of SteamHapticsSinger (forked from [CrazyCritic89's fork](https://github.com/CrazyCritic89/SteamHapticsSinger), originally by [Pila](https://gitlab.com/Pilatomic/SteamControllerSinger)) by adding macOS support (as a macOS app).
 
-## How To
+**FYI:** this isn't going to be kept as up-to-date as Crazy's fork, since I have to recompile their repo each time (I'll likely only make a new release for every **v1.x** release).
 
-1. Turn on your Steam Controller (2015 or 2026) or Steam Deck
-2. Drag the MIDI file onto the steam-haptics-singer executable
-3. If prompted, press Enter
-4. Enjoy!
+Also, Crazy has made a small **[Discord server](https://discord.gg/TWpvAxX5GW)** for sharing MIDI files and updates easier for anyone interested.
+
+## Using the App
+1. Download the .zip file from the [latest *non*-beta release](https://github.com/wiggiam/SteamHapticsSinger-for-macOS/releases), unzip it, (move it to your Applications folder) and open it.
+2. Allow the app to open in Privacy & Security settings.
+3. Choose from the menu if you want to use just the trackpad haptics, the full back rumble haptics (-b), or just lower channels only (-t).
+4. Make sure your Steam Controller is connected either via USB or the puck.
+5. Select a .mid (MIDI) file.
+6. A terminal window will open: either use Touch ID, or enter your password to allow the app to run at *sudo* level (the app can't send haptics commands to the controller otherwise.)
+7. The MIDI file should start playing on your controller after the app detects it.
+8. Enjoy!
+
+***The rest of this README.md file is from CrazyCritic89's original README.md file:***
 
 ### Where can I find midi songs?
 
 Songs ready to play can be found in the original guy's [personal collection](https://mega.nz/#F!BWpEWKzB!r7WPw5bZ_domN4pk-FJsjg) (as he called it). Otherwise, you can just try a MIDI and see what happens (most of the time it won't work well).
 
 ### Usage from command prompt:
+***FYI: this is for Windows, ignore (I've kept this for identifying what each flag does).***
+
 	Usage: steam-haptics-singer [-p] [-y] [-d DEBUG_LEVEL] [-i INTERVAL] MIDI_FILE
 
 	  -i INTERVAL		Player sleep interval (in microseconds). Lower generally means better song fidelity, but higher cpu usage, and at some point going lower won't improve any more. Default value is 10000
 	  -d DEBUG_LEVEL	Libusb debug level. Default is 0, no debug output. max is 4, max verbosity output
 	  -p	Repeat song, plays again after ending
-	  -y	Legacy playback, forces usage of the old Steam Controller haptic instruction instead of the new one (causes issues)
+	  -e 	Direct velocity to gain control, the MIDI file will set the gain"
+	  -t	(Steam Controller 2026 Only) Limit to only two channels"
+	  -s	(Steam Controller 2026 Only) Swap rumble and trackpad channels"
 
 ### MIDI files tips:
 
 MIDI files may need to be edited with a software such as [MidiEditor](https://www.midieditor.org/) to be correctly played with Steam Haptics Singer following the next tips:
 
-* Notes from MIDI channel 0 are played on right haptic
-* Notes from MIDI channel 1 are played on left haptic
+* Notes from MIDI channel 0 are played on right haptic/rumble
+* Notes from MIDI channel 1 are played on left haptic/rumble
+* Notes from MIDI channel 2 are played on right haptic (Steam Controller 2026 only)
+* Notes from MIDI channel 3 are played on left haptic (Steam Controller 2026 only)
 * Notes from others channels are ignored
 * **Avoid multiple notes active at the same time on the same channel**, since haptic actuators can only play one note at the time.
 
 
 ## Compiling
 
-You will need libusb(-dev) and pkgconf. If you have them, just type `make`.
+You’ll need:
+- Homebrew
+- libusb
+- pkg-config
 
-It's recommended to build this in a container such as [steam-runtime](https://github.com/ValveSoftware/steam-runtime?tab=readme-ov-file#building-in-the-runtime) or [holo-docker](https://github.com/SteamDeckHomebrew/holo-docker) in order for the packges to line up with the Steam Deck.
+```bash
+brew install libusb pkg-config
+```
 
-If you go the steam-runtime route, make sure to use sniper as scout is outdated.
+Then, clone and build:
 
-### For a guide:
-	git clone -b master https://github.com/CrazyCritic89/SteamHapticsSinger.git
-	cd SteamHapticsSinger
-	podman run --rm -v ./:/src -it registry.gitlab.steamos.cloud/steamrt/sniper/sdk bash
-	cd src
-	make
-	exit
-
+```bash
+git clone https://github.com/wiggiam/SteamHapticsSinger-for-macOS
+cd SteamHapticsSinger-for-macOS
+g++ -o steam-haptics-singer main.cpp midifile/midifile.c -fpermissive `pkg-config --libs --cflags libusb-1.0`
+```
 
 ## Changelog
 
