@@ -103,7 +103,7 @@ MIDI files may need to be edited with a software such as [MidiEditor](https://ww
 
 ## Compiling
 
-You’ll need:
+You'll need:
 - Homebrew
 - libusb
 - pkg-config
@@ -119,6 +119,17 @@ git clone https://github.com/wiggiam/SteamHapticsSinger-for-macOS
 cd SteamHapticsSinger-for-macOS
 g++ -o steam-haptics-singer main.cpp midifile/midifile.c -fpermissive `pkg-config --libs --cflags libusb-1.0`
 ```
+
+Finally, build the app bundle:
+
+```bash
+osacompile -o "Steam Haptics Singer.app" launcher.applescript
+cp steam-haptics-singer "Steam Haptics Singer.app/Contents/MacOS/"
+chmod +x "Steam Haptics Singer.app/Contents/MacOS/steam-haptics-singer"
+cp "Steam Haptics Singer.icns" "Steam Haptics Singer.app/Contents/Resources/droplet.icns"
+```
+
+You can move `Steam Haptics Singer.app` to your Applications folder, once you're finished, if you want :)
 
 ## Changelog
 
