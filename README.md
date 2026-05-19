@@ -78,7 +78,7 @@ Also, Crazy has made a small **[Discord server](https://discord.gg/TWpvAxX5GW)**
 Songs ready to play can be found in the original guy's [personal collection](https://mega.nz/#F!BWpEWKzB!r7WPw5bZ_domN4pk-FJsjg) (as he called it). Otherwise, you can just try a MIDI and see what happens (most of the time it won't work well).
 
 ### Usage from command prompt:
-***FYI: this is for Windows, ignore (I've kept this for identifying what each flag does).***
+***FYI: this is for Windows, but I've kept it for identifying what each flag does.***
 
 	Usage: steam-haptics-singer [-p] [-y] [-d DEBUG_LEVEL] [-i INTERVAL] MIDI_FILE
 
@@ -86,8 +86,8 @@ Songs ready to play can be found in the original guy's [personal collection](htt
 	  -d DEBUG_LEVEL	Libusb debug level. Default is 0, no debug output. max is 4, max verbosity output
 	  -p	Repeat song, plays again after ending
 	  -e 	Direct velocity to gain control, the MIDI file will set the gain"
-	  -t	(Steam Controller 2026 Only) Limit to only two channels"
-	  -s	(Steam Controller 2026 Only) Swap rumble and trackpad channels"
+	  -t	(Steam Controller 2026 Only) Only use trackpads
+	  -b	(Steam Controller 2026 Only) Map first two channels to rumble instead of trackpads
 
 ### MIDI files tips:
 
