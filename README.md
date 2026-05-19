@@ -1,4 +1,4 @@
-# Steam Haptics Singer (for macOS)
+# Steam Haptics Singer (for macOS, *BETA*)
 :warning: ***WARNING:*** this is the *BETA* branch, not the *master* branch; if you want to read the README file for finished releases (non-beta), switch back to the master branch :)
 
 <img align="left" height="90" alt="shs_icon" src="https://github.com/user-attachments/assets/39023623-ca33-4917-bc82-20c50d0ba8a6" /><?xml version="1.0" encoding="UTF-8" standalone="no"?>
