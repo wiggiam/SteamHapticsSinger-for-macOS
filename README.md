@@ -64,23 +64,21 @@ Also, Crazy has made a small **[Discord server](https://discord.gg/TWpvAxX5GW)**
 ## Using the App
 1. Download the .zip file from the [latest beta release](https://github.com/wiggiam/SteamHapticsSinger-for-macOS/releases), unzip it, (move it to your Applications folder) and open it.
 2. Allow the app to open in Privacy & Security settings.
-3. Choose from the menu if you want to use just the trackpad haptics, the full back rumble haptics (-b), or just lower channels only (-t).
+3. Choose from the menu if you want standard playback, swap the rumble & trackpad channels (-s), limit to two channels (-t), do both (-s, -t), repeat the song (-p) or have direct velocity control (-e).
 4. Make sure your Steam Controller is connected either via USB or the puck.
 5. Select a .mid (MIDI) file.
 6. A terminal window will open: either use Touch ID, or enter your password to allow the app to run at *sudo* level (the app can't send haptics commands to the controller otherwise.)
 7. The MIDI file should start playing on your controller after the app detects it.
 8. Enjoy!
 
-**NOTE:** For Steam Controller (2015), make sure the BLE firmware is NOT installed.
-
 ***The rest of this README.md file is from CrazyCritic89's original README.md file:***
 
 ### Where can I find midi songs?
 
-Songs ready to play can be found in the original guy's [personal collection](https://mega.nz/#F!BWpEWKzB!r7WPw5bZ_domN4pk-FJsjg) (as he called it). Otherwise, you can just try a MIDI and see what happens (most of the time it won't work well).
+Songs ready to play can be found in the original guy's (Pila) [personal collection](https://mega.nz/#F!BWpEWKzB!r7WPw5bZ_domN4pk-FJsjg) (as he called it). Otherwise, you can just try a MIDI and see what happens (most of the time it won't work well).
 
 ### Usage from command prompt:
-***FYI: this is for Windows, ignore (I've kept this for identifying what each flag does).***
+***FYI: this is for Windows, but I've kept it for identifying what each flag does.***
 
 	Usage: steam-haptics-singer [-p] [-y] [-d DEBUG_LEVEL] [-i INTERVAL] MIDI_FILE
 
@@ -105,14 +103,23 @@ MIDI files may need to be edited with a software such as [MidiEditor](https://ww
 
 ## Compiling
 
-***FYI: this is meant for Windows, and was taken directly from Crazy's README, so this may not work on macOS.***
+You'll need:
+- Homebrew
+- libusb
+- hidapi
+- pkg-config
 
-You will need libusb(-dev), hidapi-hidraw, and pkgconf. If you have them, just type `make`.
+```bash
+brew install libusb hidapi pkg-config
+```
 
-### For a guide:
-	git clone -b beta https://github.com/wiggiam/SteamHapticsSinger-for-macOS.git
-	cd SteamHapticsSinger
-	make
+Then, clone and build:
+
+```bash
+git clone -b beta https://github.com/wiggiam/SteamHapticsSinger-for-macOS
+cd SteamHapticsSinger-for-macOS
+g++ -o steam-haptics-singer main.cpp midifile/midifile.c -fpermissive -I/opt/homebrew/include -I/opt/homebrew/include/libusb-1.0 `pkg-config --libs --cflags libusb-1.0 hidapi`
+```
 
 ## Changelog
 
