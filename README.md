@@ -1,5 +1,5 @@
-# Steam Haptics Singer
-<img align="left" height="90" alt="shs_icon_new" src="https://github.com/user-attachments/assets/0c7629e8-b289-47d1-b0f1-560037f4139e" />
+# Steam Haptics Singer (for macOS)
+<img align="left" height="90" alt="shs_icon" src="https://github.com/user-attachments/assets/39023623-ca33-4917-bc82-20c50d0ba8a6" /><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    viewBox="0 0 36 36"
    fill="none"
@@ -55,34 +55,33 @@
   </g>
 </svg>
 
-This project aims to be a continuation of SteamControllerSinger (forked from [Roboron3042's fork](https://github.com/Roboron3042/SteamControllerSinger), originally by [Pila](https://gitlab.com/Pilatomic/SteamControllerSinger)) by fixing issues, adding features, and, most notably, Steam Deck and Steam Controller (2026) support.
+This project is a further continuation of SteamHapticsSinger (forked from [CrazyCritic89's fork](https://github.com/CrazyCritic89/SteamHapticsSinger), originally by [Pila](https://gitlab.com/Pilatomic/SteamControllerSinger)) by adding macOS support (as a macOS app).
 
-I have made a small [Discord server](https://discord.gg/TWpvAxX5GW) for sharing MIDI files and updates easier for anyone interested.
+**FYI:** this isn't going to be kept as up-to-date as Crazy's fork, since I have to recompile their repo each time (I'll likely only make a new release for every **v1.x** release).
 
-NOTE: For Steam Controller (2015), make sure the BLE firmware is NOT installed.
+Also, Crazy has made a small **[Discord server](https://discord.gg/TWpvAxX5GW)** for sharing MIDI files and updates easier for anyone interested.
 
-## How To
+## Using the App
+1. Download the .zip file from the [latest beta release](https://github.com/wiggiam/SteamHapticsSinger-for-macOS/releases), unzip it, (move it to your Applications folder) and open it.
+2. Allow the app to open in Privacy & Security settings.
+3. Choose from the menu if you want to use just the trackpad haptics, the full back rumble haptics (-b), or just lower channels only (-t).
+4. Make sure your Steam Controller is connected either via USB or the puck.
+5. Select a .mid (MIDI) file.
+6. A terminal window will open: either use Touch ID, or enter your password to allow the app to run at *sudo* level (the app can't send haptics commands to the controller otherwise.)
+7. The MIDI file should start playing on your controller after the app detects it.
+8. Enjoy!
 
-1. [Download the latest release](https://github.com/CrazyCritic89/SteamHapticsSinger/releases) (the Linux build is the one with no file extension)
-2. Turn on your Steam Controller (2015 or 2026) or Steam Deck
+**NOTE:** For Steam Controller (2015), make sure the BLE firmware is NOT installed.
 
-#### On Linux
-1. Right click inside the folder
-2. Click "Open in Terminal" 
-3. Type `chmod +x steam-haptics-singer` to make the program executable
-4. Type `./steam-haptics-singer [name of your midi file]` to run
-5. Enjoy!
-#### On Windows
-1. Click the open space in the folder path at the top in file explorer
-2. Type in "cmd"
-3. Type `steam-haptics-singer.exe [name of your midi file]` to run
-4. Enjoy!
+***The rest of this README.md file is from CrazyCritic89's original README.md file:***
 
 ### Where can I find midi songs?
 
 Songs ready to play can be found in the original guy's [personal collection](https://mega.nz/#F!BWpEWKzB!r7WPw5bZ_domN4pk-FJsjg) (as he called it). Otherwise, you can just try a MIDI and see what happens (most of the time it won't work well).
 
 ### Usage from command prompt:
+***FYI: this is for Windows, ignore (I've kept this for identifying what each flag does).***
+
 	Usage: steam-haptics-singer [-p] [-y] [-d DEBUG_LEVEL] [-i INTERVAL] MIDI_FILE
 
 	  -i INTERVAL		Player sleep interval (in microseconds). Lower generally means better song fidelity, but higher cpu usage, and at some point going lower won't improve any more. Default value is 10000
@@ -106,10 +105,12 @@ MIDI files may need to be edited with a software such as [MidiEditor](https://ww
 
 ## Compiling
 
+***FYI: this is meant for Windows, and was taken directly from Crazy's README, so this may not work on macOS.***
+
 You will need libusb(-dev), hidapi-hidraw, and pkgconf. If you have them, just type `make`.
 
 ### For a guide:
-	git clone -b master https://github.com/CrazyCritic89/SteamHapticsSinger.git
+	git clone -b beta https://github.com/wiggiam/SteamHapticsSinger-for-macOS.git
 	cd SteamHapticsSinger
 	make
 
