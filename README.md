@@ -64,11 +64,11 @@ Also, Crazy has made a small **[Discord server](https://discord.gg/TWpvAxX5GW)**
 ## Using the App
 1. Download the .zip file from the [latest *non*-beta release](https://github.com/wiggiam/SteamHapticsSinger-for-macOS/releases), unzip it, (move it to your Applications folder) and open it.
 2. Allow the app to open in Privacy & Security settings.
-3. Choose from the menu if you want to use just the trackpad haptics, the full back rumble haptics (-b), or just lower channels only (-t).
+3. Choose from the menu if you want to use the trackpads & back rumble haptics (standard playback), just the trackpad haptics (-t), only the back rumble haptics (-b), repeat the song (-p), or have direct velocity control (-e).
 4. Make sure your Steam Controller is connected either via USB or the puck.
-5. Select a .mid (MIDI) file.
+5. Select a MIDI (.mid) file.
 6. A terminal window will open: either use Touch ID, or enter your password to allow the app to run at *sudo* level (the app can't send haptics commands to the controller otherwise.)
-7. The MIDI file should start playing on your controller after the app detects it.
+7. Your selected MIDI file should start playing on your controller after the app detects it.
 8. Enjoy!
 
 ***The rest of this README.md file is from CrazyCritic89's original README.md file:***
